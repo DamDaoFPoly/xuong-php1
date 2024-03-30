@@ -29,6 +29,23 @@ return new class extends Migration
 
             $table->timestamps();
         });
+
+        // Schema::create('posts', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(Category::class)->constrained();
+        //     $table->foreignIdFor(Author::class)->constrained();
+
+        //     $table->string('title');
+        //     $table->text('excerpt')->nullable();
+        //     $table->string('img_thumbnail')->nullable();
+        //     $table->string('img_cover')->nullable();
+        //     $table->longText('content')->nullable();
+        //     $table->boolean('is_trending')->default(false)->comment('xu hướng');
+        //     $table->unsignedInteger('view_count')->default(0);
+        //     $table->enum('status',['draft','published'])->default('draft');
+
+        //     $table->timestamps();
+        // });
     }
 
     /**

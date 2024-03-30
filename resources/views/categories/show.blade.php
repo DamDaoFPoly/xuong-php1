@@ -10,7 +10,8 @@
             <th>Trường</th>
             <th>Giá trị</th>
         </tr>
-        @foreach ($category as $key => $value)
+        {{-- ->toArray của inloqeun --}}
+        @foreach ($category->toArray() as $key => $value)
             <tr>
                 <td>{{ $key }}</td>
                 <td>{{ $value }}</td>

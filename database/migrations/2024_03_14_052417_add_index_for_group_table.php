@@ -23,7 +23,7 @@ return new class extends Migration
         Schema::table('post_tag', function (Blueprint $table) {
             $table->primary(['post_id', 'tag_id']);
 
-        });
+        }); 
     }
 
     /**
