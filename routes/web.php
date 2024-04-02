@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Middleware\IsAdminMiddleware;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
@@ -84,9 +85,9 @@ Route::get('/', function () {
 //     //     ->get()
 //     // );
 // });
-Route::view('/dashboard', 'dashboard')->name('dashboard')->middleware('auth');
+Route::view('/dashboard', 'dashboard')->name('dashboard')->middleware(['auth', IsAdminMiddleware::class]);
 Route::resource('categories', CategoryController::class);
-// Route::resource('posts', PostController::class);
+Route::resource('posts', PostController::class);
 
 
 // Route::get('show-form-sigup', [AuthController::class, 'AuthController@showFormSigup'])->name('sigup-form');

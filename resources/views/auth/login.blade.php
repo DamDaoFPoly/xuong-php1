@@ -15,10 +15,10 @@
 
     <form action="{{ route('login') }}" method="POST">
         @csrf
-        <div class="mt-2 mb2">
+        {{-- <div class="mt-2 mb2">
             <label for="">Name</label>
             <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
-        </div>
+        </div> --}}
         <div class="mt-2 mb2">
             <label for="">Email</label>
             <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">

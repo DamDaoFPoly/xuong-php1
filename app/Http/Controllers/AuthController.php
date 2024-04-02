@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\SigupRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,13 +21,14 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function sigup(Request $request)
+    public function sigup(SigupRequest $request) // đổi Requets thành SigupRequest và SigupRequest thành 1 đối tượng
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'email' => ['required',],
-            'password' => 'required|confirmed'
-        ]);
+        // $request->validate([
+        //     'name' => 'required|max:255',
+        //     'email' => ['required',],
+        //     'password' => 'required|confirmed'
+        // ]); dùng bên sigupRequets
+
         $user = User::query()->create($request->all());
         Auth::login($user);
         return redirect()->route('dashboard');

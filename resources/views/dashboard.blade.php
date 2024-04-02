@@ -5,6 +5,6 @@
     {{-- @dd(\Auth::user()->name) --}}
     <p>Đăng nhập để truy cập</p>
 
-    <a href="{{ route('logout') }}" onclick="return confirm('Aree you sure?')" class="btn btn-danger">Đăng Xuất</a>
+    <a href="{{ route('logout') }}" onclick="return alert('Aree you sure?')" class="btn btn-danger">Đăng Xuất</a>
 
 @endsection
